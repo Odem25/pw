@@ -1,0 +1,276 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000000;
+            font-family: sans-serif;
+            color: #fff;
+        }
+        .image-container, .image-container2 {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .image-container img, .image-container2 img {
+            width: 48%;
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .image-container img:hover, .image-container2 img:hover {
+            transform: scale(1.05);
+        }
+
+        .fullscreen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .fullscreen-image {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            opacity: 0.7;
+            border-radius: 50%;
+        }
+        #image {
+            width: 50%;
+            height: auto;
+            max-width: 50%;
+            border-radius: 10px;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .content {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.791);
+            border-radius: 10px;
+        }
+
+        .image-container {
+            display: flex;  
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .image-container img {
+            width: 48%;
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .image-container2 {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .image-container2 img {
+            width: 48%;
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header nav ul {
+            display: flex;
+        }
+
+        .header nav li {
+            margin-left: 20px;
+        }
+
+        .header nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .header nav a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #888;
+    }
+
+    .footer a {
+        color: #888;
+    }
+    .section-title {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .list-item::before {
+            content: '• ';
+            color: #00bcd4;
+        }
+
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/addons/"
+  }
+}
+</script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <div id="particles-container"></div>
+    <div class="content">
+        <div class="header">
+            <h1>Ömer Demir</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section>
+            <h2>Welcome</h2>
+            <p>I'm a self-taught VFX/3D-Artist from Germany. I primarily use Blender, Davinci Resolve, After Effects and Photoshop for my projects.
+                I'm currently studying Visual Technical Communication</p>
+                <div class="image-container">
+                    <img src="Render_1.1.png" alt="3D Scene" onclick="openFullscreen(this)">
+                    <img src="untitled28.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
+                </div>
+                <p></p>
+                <div class="image-container2">
+                    <img src="InteriorScene.png" alt="3D Scene" onclick="openFullscreen(this)">
+                    <img src="sd27.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
+                </div>
+                
+        </section>
+        <section>
+            <h3 class="section-title">Things I do</h3>
+            <ul>
+                <li class="list-item">I enjoy using Blender to create realistic and cinematic
+                    3D environments. I have over 1000 hours of experience in Blender. (I have some experience with Cinema4D as well)
+                </li>
+                <li class="list-item">Product design is also something I enjoy. I often use
+                    Blender and Davinci resolve for product animations.
+                </li>
+                <li class="list-item">I have a huge interest in technology, hardware etc.
+                    I have a lot of experience with PCs and some experience with servers.
+                </li>
+                <li class="list-item">I also like to edit videos with Davinci Resolve and After Effects.</li>
+            </ul>
+        </section>
+        <section>
+            <h3 class="section-title">My Hobbies</h3>
+            <ul>
+                <li class="list-item">3D modeling & animation</li>
+                <li class="list-item">Technology</li>
+                <li class="list-item">Reading books</li>
+                <li class="list-item">Music</li>
+            </ul>
+        </section>
+        <section>
+            <p>Feel free to check out my work under the <a href="projects.html">projects</a> page</p>
+        </section>
+    </div>
+</section>
+</div>
+<div class="fullscreen-overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
+    <img id="fullscreenImage" class="fullscreen-image" src="" alt="Fullscreen View">
+</div>
+
+<script>
+    function openFullscreen(imgElement) {
+        document.getElementById('fullscreenImage').src = imgElement.src;
+        document.getElementById('fullscreenOverlay').style.display = 'flex';
+    }
+
+    function closeFullscreen() {
+        document.getElementById('fullscreenOverlay').style.display = 'none';
+    }
+</script>
+    <footer class="footer">
+        &copy; 2025 Ömer Demir. All rights reserved.
+    </footer>
+</body>
+</html>

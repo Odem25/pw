@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: sans-serif;
+            color: #fff;
+        }
+
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header nav ul {
+            display: flex;
+        }
+
+        .header nav li {
+            margin-left: 20px;
+        }
+
+        .header nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .header nav a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #888;
+    }
+
+    .footer a {
+        color: #888;
+    }
+    .section-title {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .list-item::before {
+            content: '• ';
+            color: #00bcd4;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/addons/"
+  }
+}
+</script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <div id="particles-container"></div>
+    <div class="content">
+        <div class="header">
+            <h1>Contact</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section>
+            <h2>Contact Me</h2>
+            <p>You can reach me via:</p>
+            <ul>
+                <li>Email: oedemcontact@gmail.com</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            &copy; 2025 Ömer Demir. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
