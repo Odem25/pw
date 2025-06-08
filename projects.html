@@ -5,78 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <style>
+        /* --- General Body and Content Styles --- */
         body {
             margin: 0;
             background-color: #000000;
             font-family: sans-serif;
             color: #fff;
         }
-        .image-container, .image-container2 {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .image-container img, .image-container2 img {
-            width: 48%;
-            max-width: 50%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        .image-container img:hover, .image-container2 img:hover {
-            transform: scale(1.05);
-        }
-
-        .fullscreen-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
-            align-items: center;
-            justify-content: center;
-
-        }
-
-        .fullscreen-image {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
-
-        #particles-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background-color: #fff;
-            opacity: 0.7;
-            border-radius: 50%;
-        }
-        #image {
-            width: 50%;
-            height: auto;
-            max-width: 50%;
-            border-radius: 10px;
-            display: block;
-            margin: 10px 0;
-        }
 
         .content {
-            position: relative;
+            position: relative; /* Keep this for stacking above particles */
+            z-index: 1;      /* Keep this for stacking above particles */
             width: 80%;
             max-width: 800px;
             margin: 100px auto;
@@ -85,33 +24,12 @@
             border-radius: 10px;
         }
 
-        .image-container {
-            display: flex;  
-            justify-content: center;
-            gap: 10px;
+        h1, h2, p {
+            text-align: center; /* Center the text for a cleaner look */
         }
-
-        .image-container img {
-            width: 48%;
-            max-width: 50%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .image-container2 {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .image-container2 img {
-            width: 48%;
-            max-width: 50%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        h1 {
-            font-size: 2em;
+        
+        h2 {
+            font-size: 1.8em;
             margin-bottom: 10px;
         }
 
@@ -120,29 +38,12 @@
             line-height: 1.6;
         }
 
-        a {
-            color: #00bcd4;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-
+        /* --- Header and Navigation --- */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px; /* Increased margin */
         }
 
         .header h1 {
@@ -151,6 +52,9 @@
         }
 
         .header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
         }
 
@@ -161,34 +65,83 @@
         .header nav a {
             color: #fff;
             text-decoration: none;
+            font-size: 1.1em;
         }
 
         .header nav a:hover {
             text-decoration: underline;
         }
+
+        /* --- NEW: Gallery Styles --- */
+        /* This is the main container for all your gallery images. */
+        .gallery-grid {
+            display: grid;
+            /* This creates two equal-width columns. */
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; /* This sets the space between all images. */
+            margin-top: 20px;
+        }
+        
+        /* This styles every image inside the gallery. */
+        .gallery-grid img {
+            width: 100%; /* Makes the image fill the width of its column. */
+            height: 220px; /* A fixed height to make all images uniform. Adjust as you like. */
+            object-fit: cover; /* Crucial: ensures image fills the space without stretching. */
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05); /* The zoom effect you had. */
+        }
+
+
+        /* --- Fullscreen Image Overlay --- */
+        .fullscreen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000; /* Ensure it's on top of everything */
+        }
+
+        .fullscreen-image {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        
+        /* --- Background Particles --- */
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* --- Footer --- */
         .footer {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444; /* Added a separator line */
             color: #888;
         }
 
         .footer a {
             color: #888;
         }
-        
-
-
     </style>
-    <script type="importmap">
-        {
-          "imports": {
-            "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/addons/"
-          }
-        }
-        </script>
-    <script type="module" src="script.js"></script>
-</head>
+    </head>
 <body>
     <div id="particles-container"></div>
     <div class="content">
@@ -207,30 +160,17 @@
             <p>Click on the images to view them in more detail.</p>
         </section>
 
-        <section>
-            <div class="image-container">
-                <img src="Render_1.1.png" alt="3D Scene" onclick="openFullscreen(this)">
-                <img src="untitled28.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
-            </div>
-            <p></p>
-            <div class="image-container2">
-                <img src="keyboardanimation.gif" alt="3D Scene" onclick="openFullscreen(this)">
-                <img src="Untitled3241.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
-            <div class="image-container2">
-                <img src="InteriorScene.png" alt="3D Scene" onclick="openFullscreen(this)">
-                <img src="sd27.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
-            
-            </div>
-            <p></p>
-            <div class="image-container2">
-                <img src="testszene60070-0280.gif" alt="3D Scene" onclick="openFullscreen(this)">
-                <img src="23124234.gif" alt="Another 3D Scene" onclick="openFullscreen(this)">
-            </div>
-            <p></p>
-            <div class="image-container2">
-                <img src="Solo.png" alt="3D Scene" onclick="openFullscreen(this)">
-                <img src="TARS.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
-            </div>
+        <section class="gallery-grid">
+            <img src="Render_1.1.png" alt="3D Scene" onclick="openFullscreen(this)">
+            <img src="untitled28.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
+            <img src="keyboardanimation.gif" alt="3D Scene" onclick="openFullscreen(this)">
+            <img src="Untitled3241.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
+            <img src="InteriorScene.png" alt="3D Scene" onclick="openFullscreen(this)">
+            <img src="sd27.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
+            <img src="testszene60070-0280.gif" alt="3D Scene" onclick="openFullscreen(this)">
+            <img src="23124234.gif" alt="Another 3D Scene" onclick="openFullscreen(this)">
+            <img src="Solo.png" alt="3D Scene" onclick="openFullscreen(this)">
+            <img src="TARS.png" alt="Another 3D Scene" onclick="openFullscreen(this)">
         </section>
 
         <footer class="footer">
@@ -238,15 +178,11 @@
         </footer>
     </div>
 
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="modalDescription" class="modal-description"></div>
-    </div>
     <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
         <img id="fullscreenImage" class="fullscreen-image" src="" alt="Fullscreen View">
     </div>
     <script>
+        // Your existing Javascript works perfectly, no changes needed here.
         function openFullscreen(imgElement) {
             document.getElementById('fullscreenImage').src = imgElement.src;
             document.getElementById('fullscreenOverlay').style.display = 'flex';
