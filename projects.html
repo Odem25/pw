@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/addons/"
+          }
+        }
+    </script>
+    <script type="module" src="script.js" defer></script> 
     <style>
         /* --- General Body and Content Styles --- */
         body {
@@ -14,8 +23,8 @@
         }
 
         .content {
-            position: relative; /* Keep this for stacking above particles */
-            z-index: 1;      /* Keep this for stacking above particles */
+            position: relative; 
+            z-index: 1;      
             width: 80%;
             max-width: 800px;
             margin: 100px auto;
@@ -25,7 +34,7 @@
         }
 
         h1, h2, p {
-            text-align: center; /* Center the text for a cleaner look */
+            text-align: center; 
         }
         
         h2 {
@@ -43,7 +52,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px; /* Increased margin */
+            margin-bottom: 40px; 
         }
 
         .header h1 {
@@ -72,30 +81,26 @@
             text-decoration: underline;
         }
 
-        /* --- NEW: Gallery Styles --- */
-        /* This is the main container for all your gallery images. */
+        /* --- Gallery Styles (The Fix from Before) --- */
         .gallery-grid {
             display: grid;
-            /* This creates two equal-width columns. */
             grid-template-columns: 1fr 1fr; 
-            gap: 15px; /* This sets the space between all images. */
+            gap: 15px; 
             margin-top: 20px;
         }
         
-        /* This styles every image inside the gallery. */
         .gallery-grid img {
-            width: 100%; /* Makes the image fill the width of its column. */
-            height: 220px; /* A fixed height to make all images uniform. Adjust as you like. */
-            object-fit: cover; /* Crucial: ensures image fills the space without stretching. */
+            width: 100%; 
+            height: 220px; 
+            object-fit: cover; 
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
 
         .gallery-grid img:hover {
-            transform: scale(1.05); /* The zoom effect you had. */
+            transform: scale(1.05);
         }
-
 
         /* --- Fullscreen Image Overlay --- */
         .fullscreen-overlay {
@@ -108,7 +113,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            z-index: 1000; /* Ensure it's on top of everything */
+            z-index: 1000; 
         }
 
         .fullscreen-image {
@@ -117,7 +122,7 @@
             border-radius: 10px;
         }
         
-        /* --- Background Particles --- */
+        /* --- RESTORED: Background Particle Styles --- */
         #particles-container {
             position: fixed;
             top: 0;
@@ -128,12 +133,22 @@
             z-index: 0;
         }
 
+        /* This class is likely used by your script.js to style the particles */
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            opacity: 0.7;
+            border-radius: 50%;
+        }
+
         /* --- Footer --- */
         .footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #444; /* Added a separator line */
+            border-top: 1px solid #444; 
             color: #888;
         }
 
@@ -141,9 +156,10 @@
             color: #888;
         }
     </style>
-    </head>
+</head>
 <body>
     <div id="particles-container"></div>
+    
     <div class="content">
         <div class="header">
             <h1>Projects</h1>
