@@ -228,15 +228,15 @@
                         <div class="img-caption"></div>
                     </div>
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="untitled28.png" alt="3D Scene">
+                        <img src="untitled28.jpg" alt="3D Scene">
                         <div class="img-caption"></div>
                     </div>
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="keyboardanimation.gif" alt="3D Scene">
+                        <video src="keyboardanimation.mp4" autoplay loop muted playsinline preload="metadata"></video>
                         <div class="img-caption"></div>
                     </div>
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <video src="6300abek2video0001-0110.mkv"       autoplay loop muted playsinline onclick="openFullscreen(this)"></video>
+                        <video src="6300abek2video0001-0110.mp4" autoplay loop muted playsinline preload="metadata"></video>
                         <div class="img-caption"></div>
                     </div>
                 </div>
@@ -244,19 +244,19 @@
                 <!-- slide 2 -->
                 <div class="slide">
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="InteriorScene.png" alt="Interior">
+                        <img src="InteriorScene.jpg" alt="Interior">
                         <div class="img-caption"></div>
                     </div>
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="sd27.png" alt="Scene">
+                        <img src="sd27.jpg" alt="Scene">
                         <div class="img-caption"></div>
                     </div>
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="testszene60070-0280.gif" alt="Animation">
+                        <video src="testszene60070-0280.mp4" autoplay loop muted playsinline preload="metadata"></video>
                         <div class="img-caption"></div>
                     </div>
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="23124234.gif" alt="Animation">
+                        <video src="23124234.mp4" autoplay loop muted playsinline preload="metadata"></video>
                         <div class="img-caption"></div>
                     </div>
                 </div>
@@ -264,19 +264,19 @@
                 <!-- slide 3 -->
                 <div class="slide">
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="Solo.png" alt="Solo">
+                        <img src="Solo.jpg" alt="Solo">
                         <div class="img-caption"></div>
                     </div>
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="TARS.png" alt="TARS">
+                        <img src="TARS.jpg" alt="TARS">
                         <div class="img-caption"></div>
                     </div>
                     <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="Render_1.1.png" alt="3D Scene">
+                        <img src="Render_1.1b.jpg" alt="3D Scene">
                         <div class="img-caption"></div>
                     </div>
-                    <div class="img-wrap" data-caption="" onclick="openFS(this)">
-                        <img src="untitled28.png" alt="3D Scene">
+                    <div class="img-wrap" data-caption="Mazda RX-7 collage: Blender renders combined in Photoshop" onclick="openFS(this)">
+                        <img src="RX7-Collage.jpg" alt="Mazda RX-7 collage">
                         <div class="img-caption"></div>
                     </div>
                 </div>
@@ -297,6 +297,7 @@
             <li class="list-item">Product design is also something I enjoy. I often use Blender and Davinci Resolve for product animations.</li>
             <li class="list-item">I have a huge interest in technology, hardware etc. I have a lot of experience with PCs and some experience with servers.</li>
             <li class="list-item">I also like to edit videos with Davinci Resolve and After Effects.</li>
+            <li class="list-item">During my internship at Drägerwerk I created Amazon product images, product animations and shop pages using Photoshop, Illustrator and Premiere Pro. See the <a href="projects.html">projects</a> page.</li>
         </ul>
     </section>
 
@@ -420,6 +421,7 @@ function openFS(wrap) {
         fsImg.style.display = 'none';
         fsVideo.style.display = 'block';
         fsVideo.src = media.currentSrc || media.src;
+        fsVideo.play().catch(() => {});
     } else {
         fsVideo.style.display = 'none';
         fsVideo.pause();

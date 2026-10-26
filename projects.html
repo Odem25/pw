@@ -68,8 +68,26 @@
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
-        .gallery-grid img:hover, 
+        .gallery-grid img:hover,
         .gallery-grid video:hover { transform: scale(1.05); }
+        .gallery-grid .wide { grid-column: 1 / -1; height: auto; aspect-ratio: 16 / 9; }
+        .gallery-grid video.wide { object-fit: contain; }
+
+        .case-study { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #333; }
+        .case-sub { text-align: center; font-size: 1.2em; margin: 30px 0 0; }
+        .case-study a { color: #00bcd4; text-decoration: none; }
+        .case-study a:hover { text-decoration: underline; }
+        .case-img { display: block; width: 100%; max-width: 420px; height: auto; margin: 20px auto 0; border-radius: 10px; cursor: pointer; }
+        .case-caption { font-size: 0.95rem; color: #ddd; margin: 12px 0 0; }
+        .case-note { font-size: 0.85rem; color: #888; margin: 6px 0 0; }
+        .tool-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .tool-tags span {
+            padding: 4px 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: #ccc;
+        }
 
         .fullscreen-overlay {
             position: fixed; top:0; left:0;
@@ -113,24 +131,41 @@
         <p>Click on the images to view them in more detail.</p>
     </section>
 
+    <section class="case-study">
+        <h2>Dräger Internship</h2>
+        <p>During my internship at Drägerwerk I created a large number of Amazon pages for their products: product images, product animations and shop pages, made with Photoshop, Illustrator and Premiere Pro. The image below is just one example of many.</p>
+        <p class="case-links">
+            <a href="https://www.amazon.de/dp/B0FHWJ52F2" target="_blank" rel="noopener">See a live listing on Amazon.de &rarr;</a>
+        </p>
+        <div class="tool-tags">
+            <span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span>
+        </div>
+        <img class="case-img" src="draeger-ersatzscheibe.jpg" alt="Dräger product graphic for Amazon: goggle with highlighted replacement lens (Ersatzscheibe)" loading="lazy" decoding="async" onclick="openFullscreen(this)">
+        <p class="case-caption">One of many examples: the goggle illustration was drawn from scratch in Adobe Illustrator.</p>
+        <p class="case-note">Image &copy; Drägerwerk, created during my internship.</p>
+
+        <h3 class="case-sub">Product animations</h3>
+        <div class="gallery-grid">
+            <video src="3500a2p3video0001-0100.mp4"       autoplay loop muted playsinline preload="metadata" onclick="openFullscreen(this)"></video>
+            <video src="6300abek2er_1video0001-0110.mp4"  autoplay loop muted playsinline preload="metadata" onclick="openFullscreen(this)"></video>
+            <video src="6300abek2video0001-0110.mp4"      autoplay loop muted playsinline preload="metadata" onclick="openFullscreen(this)"></video>
+            <video src="X-plore_3300-3500-Alle_Filter.mp4" autoplay loop muted playsinline preload="metadata" onclick="openFullscreen(this)"></video>
+            <video class="wide" src="X-plore_1900er-V.mp4" autoplay loop muted playsinline preload="metadata" onclick="openFullscreen(this)"></video>
+        </div>
+    </section>
+
     <section class="gallery-grid">
-        <video src="3500a2p3video0001-0100.mkv"       autoplay loop muted playsinline onclick="openFullscreen(this)"></video>
-        <video src="6300abek2er_1video0001-0110.mkv"     autoplay loop muted playsinline onclick="openFullscreen(this)"></video>
-        <video src="6300abek2video0001-0110.mkv"       autoplay loop muted playsinline onclick="openFullscreen(this)"></video>
-        
-        <video src="X-plore_3300-3500-Alle_Filter.mp4" autoplay loop muted playsinline onclick="openFullscreen(this)"></video>
-        
-        <video src="X-plore_1900er(V).mp4" autoplay loop muted playsinline onclick="openFullscreen(this)"></video>
-        <img src="Render_1.1.jpg"              alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="untitled28.png"              alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="keyboardanimation.gif"       alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="Untitled3241.png"            alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="InteriorScene.png"           alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="sd27.png"                    alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="testszene60070-0280.gif"     alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="23124234.gif"                alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="Solo.png"                    alt="3D Scene"   onclick="openFullscreen(this)">
-        <img src="TARS.png"                    alt="3D Scene"   onclick="openFullscreen(this)">
+        <img class="wide" src="RX7-Collage.jpg" alt="Mazda RX-7 collage: Blender renders and Photoshop edit" onclick="openFullscreen(this)">
+        <img src="Render_1.1.jpg"             alt="3D Scene"   loading="lazy" decoding="async" onclick="openFullscreen(this)">
+        <img src="untitled28.jpg"              alt="3D Scene"   loading="lazy" decoding="async" onclick="openFullscreen(this)">
+        <video src="keyboardanimation.mp4"     autoplay loop muted playsinline preload="metadata" onclick="openFullscreen(this)"></video>
+        <img src="Untitled3241.webp"           alt="3D Scene"   loading="lazy" decoding="async" onclick="openFullscreen(this)">
+        <img src="InteriorScene.jpg"           alt="3D Scene"   loading="lazy" decoding="async" onclick="openFullscreen(this)">
+        <img src="sd27.jpg"                    alt="3D Scene"   loading="lazy" decoding="async" onclick="openFullscreen(this)">
+        <video src="testszene60070-0280.mp4"   autoplay loop muted playsinline preload="metadata" onclick="openFullscreen(this)"></video>
+        <video src="23124234.mp4"              autoplay loop muted playsinline preload="metadata" onclick="openFullscreen(this)"></video>
+        <img src="Solo.jpg"                    alt="3D Scene"   loading="lazy" decoding="async" onclick="openFullscreen(this)">
+        <img src="TARS.jpg"                    alt="3D Scene"   loading="lazy" decoding="async" onclick="openFullscreen(this)">
     </section>
 
     <footer class="footer">&copy; 2025 Ömer Demir. All rights reserved.</footer>
@@ -175,6 +210,7 @@ function openFullscreen(el) {
         imgElement.style.display = 'none';
         videoElement.style.display = 'block';
         videoElement.src = el.currentSrc || el.src;
+        videoElement.play().catch(() => {});
     } else {
         videoElement.style.display = 'none';
         videoElement.pause();
